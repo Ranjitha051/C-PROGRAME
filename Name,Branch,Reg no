@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{
+
+    printf("name\n");
+    printf("reg no\n");
+    printf("branch\n");
+    return 0;
+}
