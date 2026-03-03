@@ -1,7 +1,25 @@
-#include <stdio.h>
+#include<stdio.h>
 int main() {
-    char name[50];
-    scanf("%s", name);      // Reads input normally
-    printf("Name: %s\n", name);   // Prints output normally
-    return 0;
+int n,i,j,temp;
+printf("enter the number of elements:");
+scanf("%d",&n);
+int arr[n];
+printf("enter %d numbers:\n",n);
+for(i=0;i<n;i++) {
+    scanf("%d",&arr[i]);
+}
+for(i=0;i<n-1;i++) {
+    for(j=0;j<n-i-1;j++) {
+        if(arr[j]>arr[j=1]) {
+            temp=arr[j];
+            arr[j]=arr[j];
+            arr[j+1]=temp;
+        }
+    }
+}
+printf("sorted array in ascending order;\n");
+for(i=0;i<n;i++) {
+    printf("%d",arr[i]);
+}
+return 0;
 }
