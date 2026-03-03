@@ -1,10 +1,8 @@
 #include<stdio.h>
-int main()
-{
-
-    int a[5]={10,20,30,40,50};
-    for(int i=0;i<5;i++)
-        printf("%d",a[i]);
-    return 0;
+int main(void){
+int m[2][3]={{1,2,3},{4,5,6}};
+for(int i=0;i<2;i++)
+    for(int j=0;j<3;i++);
+    printf("%d%c",m[i][j],(j==2)?'\n':);
+return 0;
 }
-
