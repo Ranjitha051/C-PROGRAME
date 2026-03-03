@@ -1,13 +1,15 @@
 #include <stdio.h>
 int main() {
     FILE *fp;
-    fp = fopen("example.txt", "w");  // create or open file for writing
+    char ch;
+    fp = fopen("charfile.txt", "r");
     if(fp == NULL) {
-        printf("File opening failed!\n");
+        printf("File not found!\n");
         return 1;
     }
-    printf("File opened successfully using fopen().\n");
-    fclose(fp); // closing the file
-    printf("File closed successfully using fclose().\n");
+    printf("File Contents:\n");
+    while((ch = fgetc(fp)) != EOF)
+        putchar(ch);
+    fclose(fp);
     return 0;
 }
