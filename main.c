@@ -1,15 +1,17 @@
 #include<stdio.h>
-#include<string.h>
-int main()
-{ char user[20],pass[20];
-printf("username:");
-scanf("%s",user);
-printf("password:");
-scanf("%s",pass);
-if(strcmp(pass,"admin123")==0&&strlen(pass)>=8)
-    printf("success!welcomr,%s.\n",user);
-else
-    printf("invalid password.\n");
+struct Date {
+int day;
+int mon;
+int yr;
+};
+struct student {
+int id;
+char name[20];
+struct Date dob;//nested structure
+};
+int main() {
+struct student s1={101,"kiran",{15,8,2000}};
+printf("name:%s\n",s1.name);
+printf("DOB:%d-%d-%d\n",s1.dob.day,s1.dob.mon,s1.dob.yr);
 return 0;
 }
-
