@@ -1,22 +1,15 @@
 #include<stdio.h>
-int main() {
-int arr[5] = {12, 60, 48, 36, 24};
-int n = 5, i, j, temp;
-for (i=0; i < 5 - i - 1; i++) {
-    for (j = 0; j < 5 - i - 1; j++) {
-        if (arr[j] > arr[j + 1]) {
-            temp = arr[j];
-            arr[j] = arr[j + 1];
-            arr[j + 1] = temp;
-        }
-    }
-}
-printf("sorted array:");
-for (i = 0; i < 5; i++) {
-    printf("%d", arr[i]);
-}
+#include<string.h>
+int main()
+{ char user[20],pass[20];
+printf("username:");
+scanf("%s",user);
+printf("password:");
+scanf("%s",pass);
+if(strcmp(pass,"admin123")==0&&strlen(pass)>=8)
+    printf("success!welcomr,%s.\n",user);
+else
+    printf("invalid password.\n");
 return 0;
 }
-
-
 
