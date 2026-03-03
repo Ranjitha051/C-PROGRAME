@@ -1,23 +1,14 @@
 #include<stdio.h>
 int main() {
-int arr[10],n,key,found=0;
-printf("enter number of elements:");
-scanf("%d",&n);
-printf("enter %d elements:\n",n);
-for(int i=0; i<n; i++){
-    scanf("%d",&arr[i]);
+FILE*fp;
+fp=fopen("data.txt","w");//open file for writting
+if(fp==NULL) {
+    printf("File cannot be opened!\n");
+    return 1;
 }
-printf("enter element to search:");
-scanf("%d",&key);
-for(int i=0;i<n;i++){
-    if(arr[i]==key){
-        printf("element %d found at position %d\n",key,i+1);
-        found=1;
-        break;
-    }
-}
-if(found==0){
-    printf("element %d not found in the array\n",key);
-}
+fprintf(fp,"welcome to file handling in C\n");
+fprintf(fp,"this text is written to the file.\n");
+fclose(fp);
+printf("data written successfully.\n");
 return 0;
 }
