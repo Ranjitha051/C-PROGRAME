@@ -1,17 +1,13 @@
 #include<stdio.h>
-#include<stdlib.h>
-int main() {
-int*ptr;
-ptr=(int*)malloc(5*sizeof(int));
-if(ptr==NULL){
-    printf("Memory not allocated!\n");
-    return 1;
-}
-for(int i=0;i<5;i++)
-    ptr[i]=i=1;
-for(int i=0;i<5;i++)
-    printf("%d",ptr[i]);
-free(ptr);
-return 0;
-}
-
+struct student {
+int id;
+    char name[20];
+        float marks;
+        };
+        int main() {
+        struct student s1={101,"priya",89.5};
+        printf("ID:%d\n",s1.id);
+        printf("Name:%s\n",s1.name);
+        printf("Marks:%2f\n",s1.marks);
+        return 0;
+        }
