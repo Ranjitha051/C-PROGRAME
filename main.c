@@ -1,17 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
-int main(){
-int*ptr;
-ptr = (int*)malloc(5*sizeof(int));
-if(ptr==NULL){
-        printf("memory not allocated!\n");
-return 1;
+int main() {
+    FILE *fp;
+    fp = fopen("data.txt", "a");   // Opens file in append mode
+    if(fp == NULL) {
+        printf("File cannot be opened!\n");
+        return 1;
+    }
+    fprintf(fp, "This line is appended at the end.\n");
+    fclose(fp);
+    printf("Data appended successfully.\n");
+    return 0;
 }
- for(int i=0;i<5;i++)
-ptr[i]=i+1;
-for(int i=0; i<5; i++);
- printf("%d",ptr[i]);
-free(ptr);
-return 0;
-}
-
