@@ -1,25 +1,17 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main() {
-int n,i,j,temp;
-printf("enter the number of elements:");
-scanf("%d",&n);
-int arr[n];
-printf("enter %d numbers:\n",n);
-for(i=0;i<n;i++) {
-    scanf("%d",&arr[i]);
+int*ptr;
+ptr=(int*)malloc(5*sizeof(int));
+if(ptr==NULL){
+    printf("Memory not allocated!\n");
+    return 1;
 }
-for(i=0;i<n-1;i++) {
-    for(j=0;j<n-i-1;j++) {
-        if(arr[j]>arr[j=1]) {
-            temp=arr[j];
-            arr[j]=arr[j];
-            arr[j+1]=temp;
-        }
-    }
-}
-printf("sorted array in ascending order;\n");
-for(i=0;i<n;i++) {
-    printf("%d",arr[i]);
-}
+for(int i=0;i<5;i++)
+    ptr[i]=i=1;
+for(int i=0;i<5;i++)
+    printf("%d",ptr[i]);
+free(ptr);
 return 0;
 }
+
