@@ -1,17 +1,9 @@
 #include<stdio.h>
-struct Date {
-int day;
-int mon;
-int yr;
-};
-struct student {
-int id;
-char name[20];
-struct Date dob;//nested structure
-};
+#include<string.h>
 int main() {
-struct student s1={101,"kiran",{15,8,2000}};
-printf("name:%s\n",s1.name);
-printf("DOB:%d-%d-%d\n",s1.dob.day,s1.dob.mon,s1.dob.yr);
-return 0;
+char dest[10];
+char src[]="programming";
+//use strncpy to avoid buffer overflow strncpy(dest,src,size of (dest)-1);
+dest[sizeof(dest)-1]='\0';//ensure null terminate
+printf("safely copied string:%s",dest);
 }
