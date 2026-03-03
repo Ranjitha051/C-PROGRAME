@@ -1,13 +1,22 @@
-#include <stdio.h>
+#include<stdio.h>
 int main() {
-    FILE *fp;
-    fp = fopen("data.txt", "a");   // Opens file in append mode
-    if(fp == NULL) {
-        printf("File cannot be opened!\n");
-        return 1;
+int arr[5] = {12, 60, 48, 36, 24};
+int n = 5, i, j, temp;
+for (i=0; i < 5 - i - 1; i++) {
+    for (j = 0; j < 5 - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+            temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }
     }
-    fprintf(fp, "This line is appended at the end.\n");
-    fclose(fp);
-    printf("Data appended successfully.\n");
-    return 0;
 }
+printf("sorted array:");
+for (i = 0; i < 5; i++) {
+    printf("%d", arr[i]);
+}
+return 0;
+}
+
+
+
