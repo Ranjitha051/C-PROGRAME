@@ -1,15 +1,14 @@
-#include <stdio.h>
+#include<stdio.h>
+typedef struct {
+int emp_id;
+char name[10];
+float salary;
+}Employee;
 int main() {
-    FILE *fp;
-    char ch;
-    fp = fopen("charfile.txt", "r");
-    if(fp == NULL) {
-        printf("File not found!\n");
-        return 1;
-    }
-    printf("File Contents:\n");
-    while((ch = fgetc(fp)) != EOF)
-        putchar(ch);
-    fclose(fp);
-    return 0;
+Employee e1={1002,"pallavi",30000.35};
+printf("Employee ID:%d\n",e1.emp_id);
+printf("Name:%s\n",e1.name);
+printf("Salary:%2f\n",e1.salary);
+return 0;
 }
+
