@@ -1,13 +1,13 @@
-#include<stdio.h>
-struct student {
-int id;
-    char name[20];
-        float marks;
-        };
-        int main() {
-        struct student s1={101,"priya",89.5};
-        printf("ID:%d\n",s1.id);
-        printf("Name:%s\n",s1.name);
-        printf("Marks:%2f\n",s1.marks);
-        return 0;
-        }
+#include <stdio.h>
+int main() {
+    FILE *fp;
+    fp = fopen("example.txt", "w");  // create or open file for writing
+    if(fp == NULL) {
+        printf("File opening failed!\n");
+        return 1;
+    }
+    printf("File opened successfully using fopen().\n");
+    fclose(fp); // closing the file
+    printf("File closed successfully using fclose().\n");
+    return 0;
+}
