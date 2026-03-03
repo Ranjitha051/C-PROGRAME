@@ -1,34 +1,23 @@
 #include<stdio.h>
-struct employee{
-int id;
-char name[50];
-    float salary;
-    };
-    int main() {
-    struct employee emp[5];
-    int i;
-    float totalsalary =0 ,avgsalary;
-    printf("enter details 0f 5 employees:\n");
-    for(i=0;i<5;i++) {
-        printf("\n empolyee %d\n",i+1);
-        printf("enter employee ID:");
-        scanf("%d",&emp[i].id);
-        printf("enter name:");
-        scanf("%s",emp[i].name);
-        printf("enter salary:");
-        scanf("%f",&emp[i].salary);
-        totalsalary+=emp[i].salary;
+int main() {
+int arr[10],n,key,found=0;
+printf("enter number of elements:");
+scanf("%d",&n);
+printf("enter %d elements:\n",n);
+for(int i=0; i<n; i++){
+    scanf("%d",&arr[i]);
+}
+printf("enter element to search:");
+scanf("%d",&key);
+for(int i=0;i<n;i++){
+    if(arr[i]==key){
+        printf("element %d found at position %d\n",key,i+1);
+        found=1;
+        break;
     }
-    printf("\nemployee details:\n");
-    for(i=0;i<5;i++) {
-        printf("\n employee %d\n",i+1);
-        printf("ID:%d\n",emp[i].id);
-        printf("name:%s\n",emp[i].name);
-        printf("salary: %2f\n",emp[i].salary);
-    }
-    avgsalary = totalsalary / 5;
-    printf("\n average salary of 5 empolyees=%.2f\n",avgsalary);
-    return 0;
-    }
-
-
+}
+if(found==0){
+    printf("element %d not found in the array\n",key);
+}
+return 0;
+}
